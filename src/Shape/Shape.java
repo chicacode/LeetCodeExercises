@@ -1,6 +1,6 @@
 package Shape;
 
-public class Shape {
+abstract class Shape {
     public double getArea() {
         return 0;
     }
@@ -9,4 +9,6 @@ public class Shape {
     public double getPerimeter(){
         return 0;
     }    
+
+    public abstract double getVolume();
 }
