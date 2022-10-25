@@ -48,21 +48,27 @@ public class ArrayListPractice {
 
         ArrayList<Integer> numberList2 = new ArrayList<Integer>(10);
 
+        ArrayList<Integer> numberList2Copy = new ArrayList<Integer>(10);
+        ;
+        System.out.println("----------------------");
         for (int i = 0; i < 10; i++) {
-            System.out.println("----------------------");
+            // • Fill the ArrayList with ten random numbers (1-50)
             int random_numbers = rand.nextInt(1, upperBound);
             // Fill 10 slots with random values
+            // • Fill the ArrayList with ten random numbers (1-50)
             numberList2.add(random_numbers);
-
-            // Display values
-            System.out.println("Random Integer in Java: " + numberList);
         }
 
-        // • Fill the ArrayList with ten random numbers (1-50)
-        // • Copy each value from the ArrayList Into another ArrayList of the same
-        // capacity
+        // Copy in second array the values of first array
+        for (int i = 0; i < numberList2.size(); i++) {
+            numberList2Copy.add(numberList2.get(i));
+        }
+        
         // • Change the last value in the first (original) ArrayList to a -5
+        numberList2.set(numberList2.size() - 1, 5);
         // • Display the contents of both ArrayLists
+        System.out.println("Number changed in ArrayList Java: " + numberList2);
+        System.out.println("Array List Copy Java: " + numberList2Copy);
 
     }
 
