@@ -11,13 +11,15 @@ public class Recipe {
     private ArrayList<Ingredient> ingredients;
     private String instructions;
     private Category recipeCategory;
+    private double totalCalories;
     
 
-    public Recipe(String name, List<Ingredient> ingredients, String instructions, Category recipCategory) {
+    public Recipe(String name, List<Ingredient> ingredients, String instructions, Category recipCategory, double totalCalories) {
         this.name = name;
         this.ingredients = (ArrayList<Ingredient>) ingredients;
         this.instructions = instructions;
         this.recipeCategory = recipCategory;
+        this.totalCalories = totalCalories;
     }
 
 
@@ -49,5 +51,11 @@ public class Recipe {
         this.recipeCategory = recipeCategory;
     }
 
+    public double getTotalCalories(){
+        return totalCalories;
+    }
     
+    public void setTotalCalories(Double totalCalories) {
+        this.totalCalories = totalCalories;
+    }
 }
