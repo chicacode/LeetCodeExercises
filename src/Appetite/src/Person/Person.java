@@ -9,7 +9,6 @@ public class Person {
     private String userName;
 
 
-
     public Person(String userid, String firstName, String lastName, String userName) {
         this.userid = UUID.randomUUID().toString();
         this.firstName = firstName;
@@ -17,21 +16,17 @@ public class Person {
         this.userName = userName;
     }
 
-
     public String getUserid() {
         return this.userid;
     }
-
 
     public String getFirstName() {
         return this.firstName;
     }
 
-
     public String getLastName() {
         return this.lastName;
     }
-
 
     public String getUserName() {
         return this.userName;

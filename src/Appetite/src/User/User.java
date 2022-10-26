@@ -32,7 +32,6 @@ public class User extends Person{
         this.userGoal = userGoal;
     }
 
-
     public int getPhone() {
         return this.phone;
     }
@@ -112,6 +111,5 @@ public class User extends Person{
     public void setUserGoal(GoalsOption userGoal) {
         this.userGoal = userGoal;
     }
-    
 
 }

@@ -1,7 +1,7 @@
 package Admin;
-import User.User;
+import Person.Person;
 
-public class Admin extends User{
+public class Admin extends Person{
     private boolean isAdmin;
 
 
@@ -9,7 +9,6 @@ public class Admin extends User{
         super(userid, firstName, lastName, userName);
         this.isAdmin = isAdmin;
     }
-
 
     public boolean isIsAdmin() {
         return this.isAdmin;
@@ -22,6 +21,4 @@ public class Admin extends User{
     public void setIsAdmin(boolean isAdmin) {
         this.isAdmin = isAdmin;
     }
-
-
 }
