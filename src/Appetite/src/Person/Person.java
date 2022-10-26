@@ -1,7 +1,7 @@
 package Person;
-
 import java.sql.Date;
 
+import Enums.GoalsOption;
 import User.User;
 
 public class Person extends User{
@@ -16,8 +16,10 @@ public class Person extends User{
     private double measuresNeck;
     private double measuresWaist;
     private double totalBmi;
+    private GoalsOption userGoal;
 
-    public Person(int phone, Date birthday, String gender, int age, double measuresWeight, double measuresHeight, double measuresNeck, double measuresWaist, double totalBmi, String userid, String firstName, String lastName, String userName) {
+
+    public Person(int phone, Date birthday, String gender, int age, double measuresWeight, double measuresHeight, double measuresNeck, double measuresWaist, double totalBmi, String userid, String firstName, String lastName, String userName, GoalsOption userGoal) {
         super(userid, firstName, lastName, userName);
         this.phone = phone;
         this.birthday = birthday;
@@ -28,6 +30,7 @@ public class Person extends User{
         this.measuresNeck = measuresNeck;
         this.measuresWaist = measuresWaist;
         this.totalBmi = totalBmi;
+        this.userGoal = userGoal;
     }
 
 
@@ -103,6 +106,13 @@ public class Person extends User{
         this.totalBmi = totalBmi;
     }
 
+    public GoalsOption getUserGoal() {
+        return userGoal;
+    }
+
+    public void setUserGoal(GoalsOption userGoal) {
+        this.userGoal = userGoal;
+    }
     
 
 }
