@@ -1,5 +1,6 @@
 package Recipe;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale.Category;
 
@@ -7,14 +8,14 @@ import Ingredient.Ingredient;
 
 public class Recipe {
     private final String name;
-    private List<Ingredient> ingredients;
+    private ArrayList<Ingredient> ingredients;
     private String instructions;
     private Category recipeCategory;
     
 
     public Recipe(String name, List<Ingredient> ingredients, String instructions, Category recipCategory) {
         this.name = name;
-        this.ingredients = ingredients;
+        this.ingredients = (ArrayList<Ingredient>) ingredients;
         this.instructions = instructions;
         this.recipeCategory = recipCategory;
     }
@@ -29,7 +30,7 @@ public class Recipe {
     }
 
     public void setIngredients(List<Ingredient> ingredients) {
-        this.ingredients = ingredients;
+        this.ingredients = (ArrayList<Ingredient>) ingredients;
     }
 
     public String getInstructions() {
