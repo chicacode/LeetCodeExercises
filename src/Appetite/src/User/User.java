@@ -1,44 +1,117 @@
 package User;
-import java.util.UUID;
+import java.sql.Date;
 
-public class User {
+import Enums.GoalsOption;
+import Person.Person;
 
-    private final String userid;
-    private final String firstName;
-    private final String lastName;
-    private String userName;
+public class User extends Person{
+
+    private int phone;
+    private Date birthday;
+    private String gender;
+    private int age;
+    private double measuresWeight;
+    private double measuresHeight;
+    private double measuresNeck;
+    private double measuresWaist;
+    private double totalBmi;
+    private GoalsOption userGoal;
 
 
-
-    public User(String userid, String firstName, String lastName, String userName) {
-        this.userid = UUID.randomUUID().toString();
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userName = userName;
+    public User(int phone, Date birthday, String gender, int age, double measuresWeight, double measuresHeight, double measuresNeck, double measuresWaist, double totalBmi, String userid, String firstName, String lastName, String userName, GoalsOption userGoal) {
+        super(userid, firstName, lastName, userName);
+        this.phone = phone;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.age = age;
+        this.measuresWeight = measuresWeight;
+        this.measuresHeight = measuresHeight;
+        this.measuresNeck = measuresNeck;
+        this.measuresWaist = measuresWaist;
+        this.totalBmi = totalBmi;
+        this.userGoal = userGoal;
     }
 
 
-    public String getUserid() {
-        return this.userid;
+    public int getPhone() {
+        return this.phone;
     }
 
-
-    public String getFirstName() {
-        return this.firstName;
+    public void setPhone(int phone) {
+        this.phone = phone;
     }
 
-
-    public String getLastName() {
-        return this.lastName;
+    public Date getBirthday() {
+        return this.birthday;
     }
 
-
-    public String getUserName() {
-        return this.userName;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public String getGender() {
+        return this.gender;
     }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public double getMeasuresWeight() {
+        return this.measuresWeight;
+    }
+
+    public void setMeasuresWeight(double measuresWeight) {
+        this.measuresWeight = measuresWeight;
+    }
+
+    public double getMeasuresHeight() {
+        return this.measuresHeight;
+    }
+
+    public void setMeasuresHeight(double measuresHeight) {
+        this.measuresHeight = measuresHeight;
+    }
+
+    public double getMeasuresNeck() {
+        return this.measuresNeck;
+    }
+
+    public void setMeasuresNeck(double measuresNeck) {
+        this.measuresNeck = measuresNeck;
+    }
+
+    public double getMeasuresWaist() {
+        return this.measuresWaist;
+    }
+
+    public void setMeasuresWaist(double measuresWaist) {
+        this.measuresWaist = measuresWaist;
+    }
+
+    public double getTotalBmi() {
+        return this.totalBmi;
+    }
+
+    public void setTotalBmi(double totalBmi) {
+        this.totalBmi = totalBmi;
+    }
+
+    public GoalsOption getUserGoal() {
+        return userGoal;
+    }
+
+    public void setUserGoal(GoalsOption userGoal) {
+        this.userGoal = userGoal;
+    }
+    
 
 }
