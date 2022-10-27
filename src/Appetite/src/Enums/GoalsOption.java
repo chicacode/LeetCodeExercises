@@ -1,6 +1,7 @@
 package Enums;
 
+
 public enum GoalsOption {
-    INCREASEMUSCLE,
-    LOSEFAT
+   A, // INCREASEMUSCLE,
+   B; // LOSEFAT;
 }
