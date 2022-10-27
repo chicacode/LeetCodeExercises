@@ -115,6 +115,11 @@ public class User extends Person {
         this.userGoal = userGoal;
     }
 
+    public static double BMI(double measuresHeight, double measuresWeight) {
+        double bmi = measuresWeight / Math.pow(measuresHeight, 2);
+        return bmi;
+    }
+
     public void getUserInfo() {
         Scanner userInfoData;
 
@@ -155,12 +160,33 @@ public class User extends Person {
             double measuresWaist = userInfoData.nextDouble();
 
             System.out.println("Please enter your BMI");
-            double bmi = userInfoData.nextDouble();
+            double bmi = BMI(measuresHeight, measuresWeight);
 
-            // System.out.println("Please enter your Goal");
-            // String goal = userInfoData.next();
+            System.out.println("The BMI is " + bmi + " so you have: ");
 
-            // GoalsOption userGoal = GoalsOption.valueOf(goal);
+            // Conditions to find out BMI category
+            if (bmi < 18.5)
+                System.out.print(" Underweight");
+
+            else if (bmi >= 18.5 && bmi < 24.9)
+                System.out.print(" Healthy");
+
+            else if (bmi >= 24.9 && bmi < 30)
+                System.out.print(" Overweight");
+
+            else if (bmi >= 30)
+                System.out.print(" Suffering from Obesity");
+
+
+            System.out.println(" \n");
+            System.out.println(" XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println(" Please enter your Goal");
+            String goal = userInfoData.next();
+
+            
+            GoalsOption userGoal = GoalsOption.valueOf(goal);
+
+            System.out.println(" Your goal is: "+userGoal);
 
             User user = new User(
                     phone,

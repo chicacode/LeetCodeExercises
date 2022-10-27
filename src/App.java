@@ -2,7 +2,7 @@ import Shape.Circle;
 import Shape.Cylinder;
 import Shape.Rectangle;
 import Shape.Sphere;
-import java.text.DecimalFormat;;
+import java.text.DecimalFormat;
 
 public class App {
     public static void main(String[] args) throws Exception {

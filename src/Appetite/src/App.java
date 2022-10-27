@@ -8,5 +8,20 @@ public class App {
 
         user.getUserInfo();
 
+
+
+
+
+
+
+        // Please Select your BMI
+
+        // If > 30 suggest this food 
+
+        // Equal to 25 suggest this list food
+
+        // Else suggest this food
+
+        // Thanks 
     }
 }

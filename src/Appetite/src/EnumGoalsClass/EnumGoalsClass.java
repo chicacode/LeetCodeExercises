@@ -6,12 +6,10 @@ import Enums.GoalsOption;
 
 public class EnumGoalsClass {
     GoalsOption goal;
-    
 
     public EnumGoalsClass(GoalsOption goal) {
         this.goal = goal;
     }
-
 
     public GoalsOption getGoal() {
         return this.goal;
@@ -30,8 +28,10 @@ public class EnumGoalsClass {
             option = input.next().charAt(0);
 
             if(option == 'A'){
+                System.out.println("A. Increase Muscle");
                 return this.setGoal(GoalsOption.A);
             }else{
+                System.out.println("B. Lose Fat");
                 return this.setGoal(GoalsOption.B);
             }
         }catch(Exception e){
@@ -39,7 +39,6 @@ public class EnumGoalsClass {
         }
 
         return this.goal;
-
     }
 
 }
