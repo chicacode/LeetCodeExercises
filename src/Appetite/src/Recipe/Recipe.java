@@ -22,7 +22,6 @@ public class Recipe {
         this.totalCalories = totalCalories;
     }
 
-
     public String getName() {
         return this.name;
     }

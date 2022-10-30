@@ -14,13 +14,11 @@ public class User extends Person {
     private int age;
     private double measuresWeight;
     private double measuresHeight;
-    private double measuresNeck;
-    private double measuresWaist;
     private double totalBmi;
     private GoalsOption userGoal;
 
     public User(int phone, String birthday, String gender, int age, double measuresWeight, double measuresHeight,
-            double measuresNeck, double measuresWaist, double totalBmi, String userid, String firstName,
+            double totalBmi, String userid, String firstName,
             String lastName, String userName, GoalsOption setGoal) {
         super(userid, firstName, lastName, userName);
         this.phone = phone;
@@ -29,8 +27,6 @@ public class User extends Person {
         this.age = age;
         this.measuresWeight = measuresWeight;
         this.measuresHeight = measuresHeight;
-        this.measuresNeck = measuresNeck;
-        this.measuresWaist = measuresWaist;
         this.totalBmi = totalBmi;
         this.userGoal = setGoal;
     }
@@ -81,22 +77,6 @@ public class User extends Person {
 
     public void setMeasuresHeight(double measuresHeight) {
         this.measuresHeight = measuresHeight;
-    }
-
-    public double getMeasuresNeck() {
-        return this.measuresNeck;
-    }
-
-    public void setMeasuresNeck(double measuresNeck) {
-        this.measuresNeck = measuresNeck;
-    }
-
-    public double getMeasuresWaist() {
-        return this.measuresWaist;
-    }
-
-    public void setMeasuresWaist(double measuresWaist) {
-        this.measuresWaist = measuresWaist;
     }
 
     public double getTotalBmi() {
@@ -153,11 +133,6 @@ public class User extends Person {
             System.out.println("Please enter your height");
             double measuresHeight = userInfoData.nextDouble();
 
-            System.out.println("Please enter your cm neck");
-            double neck = userInfoData.nextDouble();
-
-            System.out.println("Please enter your cm waist");
-            double measuresWaist = userInfoData.nextDouble();
 
             System.out.println("Please enter your BMI");
             double bmi = BMI(measuresHeight, measuresWeight);
@@ -183,10 +158,18 @@ public class User extends Person {
             System.out.println(" Please enter your Goal");
             String goal = userInfoData.next();
 
-            
+
             GoalsOption userGoal = GoalsOption.valueOf(goal);
 
             System.out.println(" Your goal is: "+userGoal);
+
+            // calculate calories base on bmi
+
+            // get result
+
+            // list of recipes
+
+            // sugest dish meal 
 
             User user = new User(
                     phone,
@@ -195,8 +178,6 @@ public class User extends Person {
                     age,
                     measuresWeight,
                     measuresHeight,
-                    neck,
-                    measuresWaist,
                     bmi,
                     userName,
                     name,
