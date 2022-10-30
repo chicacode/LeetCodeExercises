@@ -8,34 +8,32 @@ import Person.Person;
 
 public class User extends Person {
 
-    private int phone;
+    private long phone;
     private String birthday;
     private String gender;
-    private int age;
     private double measuresWeight;
     private double measuresHeight;
     private double totalBmi;
     private GoalsOption userGoal;
 
-    public User(int phone, String birthday, String gender, int age, double measuresWeight, double measuresHeight,
+    public User(long phone, String birthday, String gender, double measuresWeight, double measuresHeight,
             double totalBmi, String userid, String firstName,
             String lastName, String userName, GoalsOption setGoal) {
         super(userid, firstName, lastName, userName);
         this.phone = phone;
         this.birthday = birthday;
         this.gender = gender;
-        this.age = age;
         this.measuresWeight = measuresWeight;
         this.measuresHeight = measuresHeight;
         this.totalBmi = totalBmi;
         this.userGoal = setGoal;
     }
 
-    public int getPhone() {
+    public long getPhone() {
         return this.phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
 
@@ -53,14 +51,6 @@ public class User extends Person {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public int getAge() {
-        return this.age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public double getMeasuresWeight() {
@@ -96,7 +86,7 @@ public class User extends Person {
     }
 
     public static double BMI(double measuresHeight, double measuresWeight) {
-        double bmi = measuresWeight / Math.pow(measuresHeight, 2);
+        double bmi = measuresWeight / (measuresHeight * measuresHeight);
         return bmi;
     }
 
@@ -115,29 +105,40 @@ public class User extends Person {
             System.out.println("Please enter your userName");
             String userName = userInfoData.next();
 
-            System.out.println("Please enter your phone");
-            int phone = userInfoData.nextInt();
+            try {
+                System.out.println("Please enter your phone number");
+                long phoneNumber = userInfoData.nextLong();
+                phone = phoneNumber;
 
-            System.out.println("Please enter your birthday");
+            } catch (NumberFormatException e) {
+                System.out.println(" Input error! non numeric data");
+            }
+
+            System.out.println("Your phone number is: " + phone);
+
+            System.out.println("Enter birthdate in the following format MM-dd-YYYY:");
             String birthday = userInfoData.next();
 
-            System.out.println("Please enter your gender");
+            System.out.println("Enter your gender");
             String gender = userInfoData.next();
 
-            System.out.println("Please enter your age");
-            int age = userInfoData.nextInt();
-
-            System.out.println("Please enter your weight");
+            System.out.println("Enter your WEIGHT in KG");
             double measuresWeight = userInfoData.nextDouble();
 
-            System.out.println("Please enter your height");
-            double measuresHeight = userInfoData.nextDouble();
-
-
-            System.out.println("Please enter your BMI");
+            try {
+                System.out.println("Enter your HEIGHT in CM (ex:1.65)");
+                double height = userInfoData.nextDouble();
+                measuresHeight = height;
+            } catch (NumberFormatException e) {
+                System.out.println(" Input error! non entered a valid number");
+            }
             double bmi = BMI(measuresHeight, measuresWeight);
 
-            System.out.println("The BMI is " + bmi + " so you have: ");
+            ;
+
+            System.out.println("Your Body Mass Index (BMI) is ");
+            System.out.printf("%.2f", bmi);
+            System.out.println("  kg/m2 so you are: ");
 
             // Conditions to find out BMI category
             if (bmi < 18.5)
@@ -152,30 +153,36 @@ public class User extends Person {
             else if (bmi >= 30)
                 System.out.print(" Suffering from Obesity");
 
-
             System.out.println(" \n");
             System.out.println(" XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             System.out.println(" Please enter your Goal");
+            System.out.println(" A. Lose Body Fat");
+            System.out.println(" B. Increase Body Muscle");
             String goal = userInfoData.next();
-
 
             GoalsOption userGoal = GoalsOption.valueOf(goal);
 
-            System.out.println(" Your goal is: "+userGoal);
 
-            // calculate calories base on bmi
+            try{
+    
+                if (GoalsOption.B == userGoal) {
+                    System.out.println("A. Increase Muscle");
 
-            // get result
+                } else {
+                    System.out.println("B. Lose Fat");
 
-            // list of recipes
+                }
 
-            // sugest dish meal 
+            } catch (Exception e) {
+                System.out.println("Error: " + e);
+            }
+
+            System.out.println(" Your goal is: " + userGoal);
 
             User user = new User(
                     phone,
                     birthday,
                     gender,
-                    age,
                     measuresWeight,
                     measuresHeight,
                     bmi,
@@ -187,7 +194,7 @@ public class User extends Person {
 
             userInfoData.close();
             System.out.println("-------------");
-            System.out.println("Welcome to APPETITE" + user.getUserName());
+            System.out.println("Welcome to APPETITE: " + user.getUserName());
         } catch (InputMismatchException e) {
             e.printStackTrace();
         }
