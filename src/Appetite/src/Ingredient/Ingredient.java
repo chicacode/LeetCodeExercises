@@ -40,12 +40,10 @@ public class Ingredient {
     }
 
     public ArrayList<String> AddIngredient(ArrayList<String> ingList){
-        ArrayList listIng = new ArrayList<>(20);
         ingList.add(name);
         ingList.add(name);
         ingList.add(name);
         ingList.add(name);
-        listIng.add(ingList);
-        return listIng;
+        return ingList;
     }
 }
