@@ -10,18 +10,20 @@ public class User extends Person {
 
     private long phone;
     private String birthday;
+    int age;
     private String gender;
     private double measuresWeight;
     private double measuresHeight;
     private double totalBmi;
     private GoalsOption userGoal;
 
-    public User(long phone, String birthday, String gender, double measuresWeight, double measuresHeight,
+    public User(long phone, String birthday, int age, String gender, double measuresWeight, double measuresHeight,
             double totalBmi, String userid, String firstName,
             String lastName, String userName, GoalsOption setGoal) {
         super(userid, firstName, lastName, userName);
         this.phone = phone;
         this.birthday = birthday;
+        this.age = age;
         this.gender = gender;
         this.measuresWeight = measuresWeight;
         this.measuresHeight = measuresHeight;
@@ -44,6 +46,15 @@ public class User extends Person {
     public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
 
     public String getGender() {
         return this.gender;
@@ -119,10 +130,13 @@ public class User extends Person {
             System.out.println("Enter birthdate in the following format MM-dd-YYYY:");
             String birthday = userInfoData.next();
 
+            System.out.println("Enter your Age");
+            int age = userInfoData.nextInt();
+
             System.out.println("Enter your gender");
             String gender = userInfoData.next();
 
-            System.out.println("Enter your WEIGHT in KG");
+            System.out.println("Enter your WEIGHT in Kilograms (KG)");
             double measuresWeight = userInfoData.nextDouble();
 
             try {
@@ -142,16 +156,16 @@ public class User extends Person {
 
             // Conditions to find out BMI category
             if (bmi < 18.5)
-                System.out.print(" Underweight");
+                System.out.print(" Underweight. You need about 1950 calories per day to mantain your CURRENT weight");
 
             else if (bmi >= 18.5 && bmi < 24.9)
-                System.out.print(" Healthy");
+                System.out.print(" Healthy. You need about 2151 calories per day to mantain your CURRENT weight");
 
             else if (bmi >= 24.9 && bmi < 30)
-                System.out.print(" Overweight");
+                System.out.print(" Overweight. You are eating around 2120 calories per day");
 
             else if (bmi >= 30)
-                System.out.print(" Suffering from Obesity");
+                System.out.print(" Suffering from Obesity. You are eating more than 2213 calories per day");
 
             System.out.println(" \n");
             System.out.println(" XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
@@ -164,24 +178,22 @@ public class User extends Person {
 
 
             try{
-    
-                if (GoalsOption.B == userGoal) {
-                    System.out.println("A. Increase Muscle");
-
+                if (GoalsOption.A == userGoal) {
+                    System.out.println(" Your goal is: " );
+                    System.out.println("A. Lose BODY Fat");
                 } else {
-                    System.out.println("B. Lose Fat");
-
+                    System.out.println(" Your goal is: " );
+                    System.out.println("B. Increase Muscle");
                 }
 
             } catch (Exception e) {
                 System.out.println("Error: " + e);
             }
 
-            System.out.println(" Your goal is: " + userGoal);
-
             User user = new User(
                     phone,
                     birthday,
+                    age,
                     gender,
                     measuresWeight,
                     measuresHeight,
