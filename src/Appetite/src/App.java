@@ -1,3 +1,4 @@
+import Recipe.Recipe;
 import User.User;
 
 public class App {
@@ -8,12 +9,14 @@ public class App {
 
         user.getUserInfo();
 
+        // calculate calories base on bmi
 
-            // calculate calories base on bmi
+        // get result
 
-            // get result
+        // list of recipes
+        Recipe omelette = new Recipe(null, null, null, null, 0);
+        omelette.getRecipeByCalories();
 
-            // list of recipes
 
             // sugest dish mealÍ
 
