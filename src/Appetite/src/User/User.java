@@ -107,48 +107,52 @@ public class User extends Person {
         try {
 
             userInfoData = new Scanner(System.in);
-            System.out.println("Please enter your firstname");
+            System.out.println("XXXXXX - Enter your Firstname - XXXXXX");
             String name = userInfoData.next();
 
-            System.out.println("Please enter your lastName");
+            System.out.println("XXXXXX - Enter your LastName - XXXXXX");
             String lastName = userInfoData.next();
 
-            System.out.println("Please enter your userName");
+            System.out.println("XXXXXX - Enter your UserName - XXXXXX");
             String userName = userInfoData.next();
 
             try {
-                System.out.println("Please enter your phone number");
+                System.out.println("XXXXXX - Enter your phone number - XXXXXX");
                 long phoneNumber = userInfoData.nextLong();
                 phone = phoneNumber;
 
             } catch (NumberFormatException e) {
-                System.out.println(" Input error! non numeric data");
+                System.out.println("Input error! non numeric data");
             }
 
             System.out.println("Your phone number is: " + phone);
 
-            System.out.println("Enter birthdate in the following format MM-dd-YYYY:");
+            System.out.println("XXXXXX - Enter Birthdate in the following format MM-dd-YYYY: - XXXXXX");
             String birthday = userInfoData.next();
 
-            System.out.println("Enter your Age");
+            System.out.println("XXXXXX - Enter your Age - XXXXXX");
             int age = userInfoData.nextInt();
 
-            System.out.println("Enter your gender");
+            System.out.println("XXXXXX - Enter your Gender - XXXXXX");
             String gender = userInfoData.next();
 
-            System.out.println("Enter your WEIGHT in Kilograms (KG)");
+            System.out.println("XXXXXX - Enter your WEIGHT in Kilograms (KG) - XXXXXX");
             double measuresWeight = userInfoData.nextDouble();
 
             try {
-                System.out.println("Enter your HEIGHT in CM (ex:1.65)");
+                System.out.println("XXXXXX - Enter your HEIGHT in CM (ex:1.65) - XXXXXX");
                 double height = userInfoData.nextDouble();
                 measuresHeight = height;
             } catch (NumberFormatException e) {
-                System.out.println(" Input error! non entered a valid number");
+                System.out.println("XXXXXX -  Input error! non entered a valid number - XXXXXX");
             }
             double bmi = BMI(measuresHeight, measuresWeight);
 
-            ;
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("RESULT:");
 
             System.out.println("Your Body Mass Index (BMI) is ");
             System.out.printf("%.2f", bmi);
@@ -206,6 +210,8 @@ public class User extends Person {
 
             userInfoData.close();
             System.out.println("-------------");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             System.out.println("Welcome to APPETITE: " + user.getUserName());
         } catch (InputMismatchException e) {
             e.printStackTrace();
