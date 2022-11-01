@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        ArrayList<String> arraylist_1 = new ArrayList<String>();
+        // ArrayList<String> arraylist_1 = new ArrayList<String>();
         System.out.println("Hello, welcome to Appetite!");
         System.out.println("Your recipe's management app");
         User user = new User(0, "unknown", 0, "unknown", 0, 0, 0, null, null, null, null, null);
@@ -19,18 +19,5 @@ public class App {
         // Recipe omelette = new Recipe(null, null, null, null, 0);
         // omelette.getName();
 
-
-            // sugest dish mealÍ
-
-
-        // Please Select your BMI
-
-        // If > 30 suggest this food 
-
-        // Equal to 25 suggest this list food
-
-        // Else suggest this food
-
-        // Thanks 
     }
 }
