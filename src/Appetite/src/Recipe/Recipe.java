@@ -15,6 +15,7 @@ public class Recipe {
     private Category recipeCategory;
     private double totalCalories;
 
+
     public Recipe(String name, List<Ingredient> ingredients, String instructions, Category recipCategory,
             double totalCalories) {
         this.name = "omelette";
