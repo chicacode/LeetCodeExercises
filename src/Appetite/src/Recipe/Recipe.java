@@ -18,7 +18,7 @@ public class Recipe {
 
     public Recipe(String name, List<Ingredient> ingredients, String instructions, Category recipCategory,
             double totalCalories) {
-        this.name = "omelette";
+        this.name = "spanish omelette";
         this.ingredients = (ArrayList<Ingredient>) ingredients;
         this.instructions = instructions;
         this.recipeCategory = recipCategory;
@@ -78,27 +78,27 @@ public class Recipe {
             String name = recipeData.next();
             System.out.println("Recipe Name: " + name);
             System.out.println("Enter ingredient 1");
-            // String ingredient1 = recipeData.next();
+            String ingredient1 = recipeData.next();
 
-            // System.out.println("Enter ingredient 2");
-            // String ingredient2 = recipeData.next();
+            System.out.println("Enter ingredient 2");
+            String ingredient2 = recipeData.next();
 
-            // System.out.println("Enter ingredient 3");
-            // String ingredient3 = recipeData.next();
+            System.out.println("Enter ingredient 3");
+            String ingredient3 = recipeData.next();
 
-            // System.out.println("Enter ingredient 4");
-            // String ingredient4 = recipeData.next();
+            System.out.println("Enter ingredient 4");
+            String ingredient4 = recipeData.next();
 
-            // ArrayList<String> ingredientsBackup = new ArrayList<String>(10);
+            ArrayList<String> ingredientsBackup = new ArrayList<String>(10);
 
-            // ingredientsBackup.add(ingredient1);
-            // ingredientsBackup.add(ingredient2);
-            // ingredientsBackup.add(ingredient3);
-            // ingredientsBackup.add(ingredient4);
+            ingredientsBackup.add(ingredient1);
+            ingredientsBackup.add(ingredient2);
+            ingredientsBackup.add(ingredient3);
+            ingredientsBackup.add(ingredient4);
 
-            // System.out.println(" The ingredients of recipe are:");
+            System.out.println(" The ingredients of recipe are:");
 
-            // System.out.println(ingredientsBackup);
+            System.out.println(ingredientsBackup);
 
             // System.out.println(" The instruction of recipe" + name + " is:");
 
