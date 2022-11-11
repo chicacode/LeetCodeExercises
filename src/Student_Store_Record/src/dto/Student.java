@@ -61,4 +61,8 @@ public class Student {
         this.StudentRollNumber = StudentRollNumber;
     }
 
+    public void showStudentInfo() {
+        System.out.println(Id + " \t" + Name + "\t" + Email + "\t" + StudentId + "\t" + StudentRollNumber);
+    }
+
 }
