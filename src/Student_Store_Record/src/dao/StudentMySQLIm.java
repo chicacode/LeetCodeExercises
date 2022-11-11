@@ -15,10 +15,20 @@ public class StudentMySQLIm implements StudentDAO{
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
-    private static final String INSERT = "";
-    private static final String UPDATE = "";
-    private static final String DELETE = "";
-    private static final String GET_BY_ID = "";
-    private static final String GET_ALL = "";
-    private static final String GET_BY_EMAIL_AND_PASSWORD = "";
+    private static final String INSERT = "INSERT INTO student_table (Name, Email, StudentId, StudentRollNumber) VALUES (?,?,?,?)";
+    private static final String UPDATE = "UPDATE student_table SET Name = ?, Email = ?, StudentId = ?, StudentRollNumber = ?";
+    private static final String DELETE = "DELETE FROM student_table WHERE Id = ?";
+    private static final String GET_BY_ID = "SELECT * FROM student_table WHERE Id = ?";
+    private static final String GET_ALL = "SELECT * FROM student_table";
+    private static final String GET_BY_EMAIL_AND_ROLLNUMBER = "SELECT * FROM student_table WHERE Email = ? AND StudentRollNumber = ?";
+
+
+    public StudentMySQLIm(){
+      try {
+            connection = DriverManager.getConnection(StudentDAO.URL, StudentDAO.USER, StudentDAO.PASSWORD)
+        } catch (Exception e) {
+            // TODO: handle exception
+
+        }
+    }
 }

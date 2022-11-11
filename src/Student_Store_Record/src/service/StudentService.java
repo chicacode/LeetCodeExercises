@@ -10,6 +10,6 @@ public interface StudentService {
     public void delete(int id);
     public Student getStudentById(int id);
     public List<Student> getAll();
-    public Student getByEmailAndPassword(String email, String password);
+    public Student getByEmailAndRollNumber(String email, int StudentRollNumber);
     
 }
