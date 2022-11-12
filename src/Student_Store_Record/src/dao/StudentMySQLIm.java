@@ -22,13 +22,13 @@ public class StudentMySQLIm implements StudentDAO {
     private static final String GET_ALL = "SELECT * FROM student_table";
     private static final String GET_BY_EMAIL_AND_ROLLNUMBER = "SELECT * FROM student_table WHERE Email = ? AND StudentRollNumber = ?";
 
-    public StudentMySQLIm(){
-      try {
-            connection = DriverManager.getConnection(StudentDAO.URL, StudentDAO.USER, StudentDAO.PASSWORD)
+    public StudentMySQLIm() {
+        try {
+            connection = DriverManager.getConnection(StudentDAO.URL, StudentDAO.USER, StudentDAO.PASSWORD);
         } catch (SQLException e) {
             System.out.println("Unable to connect! ");
-            e.printStackTrace();       
-        }    
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -153,5 +153,48 @@ public class StudentMySQLIm implements StudentDAO {
         }
 
         return student;
+    }
+
+    @Override
+    public List<Student> getAll() {
+        List<Student> studentList = new LinkedList<>();
+
+        try {
+            preparedStatement = connection.prepareStatement(GET_ALL);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Student student = new Student();
+                student.setId(resultSet.getInt("Id"));
+                student.setName(resultSet.getString("Name"));
+                student.setEmail(resultSet.getString("Email"));
+                student.setStudentId(resultSet.getString("StudentId"));
+                student.setStudentRollNumber(resultSet.getInt("StudentRollNumber"));
+
+                studentList.add(student);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Unable to find student list of all students! ");
+            e.printStackTrace();
+        } finally {
+            try {
+                preparedStatement.close();
+            } catch (SQLException e) {
+                System.out.println("Unable to close the statement! ");
+                e.printStackTrace();
+            }
+        }
+
+        return studentList;
+    }
+
+    @Override
+    public Student getByEmailAndRollNumber(String email, int StudentRollNumber) {
+
+        Student student = null;
+
+        return student;
+
     }
 }
