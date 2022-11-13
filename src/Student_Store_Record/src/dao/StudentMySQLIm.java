@@ -190,9 +190,29 @@ public class StudentMySQLIm implements StudentDAO {
     }
 
     @Override
-    public Student getByEmailAndRollNumber(String email, int StudentRollNumber) {
+    public Student getByEmailAndRollNumber(String email, int studentRollNumber) {
 
         Student student = null;
+
+        try {
+
+            preparedStatement = connection.prepareStatement(GET_BY_EMAIL_AND_ROLLNUMBER);
+            preparedStatement.setString(1, email);
+            preparedStatement.setInt(2, studentRollNumber);
+
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                student = new Student();
+                student.setId(resultSet.getInt("Id"));
+                student.setName(resultSet.getString("Name"));
+                student.setEmail(resultSet.getString("Email"));
+                student.setStudentId(resultSet.getString("StudentId"));
+                student.setStudentRollNumber(resultSet.getInt("StudentRollNumber"));
+            }
+        } catch (Exception e) {
+            System.out.println("Unable to find student for email and studentRollNumber! ");
+            e.printStackTrace();
+        }
 
         return student;
 

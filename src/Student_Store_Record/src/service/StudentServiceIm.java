@@ -38,5 +38,4 @@ public class StudentServiceIm implements StudentService {
     public Student getByEmailAndRollNumber(String email, int StudentRollNumber) {
         return studentDAO.getByEmailAndRollNumber(email, 0);
     }
-
 }
