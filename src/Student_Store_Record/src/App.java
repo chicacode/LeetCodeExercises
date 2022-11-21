@@ -1,11 +1,13 @@
 import java.util.Scanner;
 
+import dto.Student;
 import service.StudentService;
 import service.StudentServiceIm;
 
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, Student Record");
+        showMenu();
 
     }
 
@@ -30,6 +32,55 @@ public class App {
 
             userChoice = scanner.nextLine();
 
-        } while (userChoice.equals("8"));
+            switch (userChoice) {
+                case "1":
+                    System.out.println("- Enter your name -");
+                    String name = scanner.nextLine();
+                    System.out.println("- Enter your studentId -");
+                    String studentId = scanner.nextLine();
+                    System.out.println("- Enter your email -");
+                    String email = scanner.nextLine();
+                    System.out.println("- Enter your roll number -");
+                    int StudentRollNumber = scanner.nextInt();
+
+                    Student student = new Student(name, email, studentId, StudentRollNumber);
+                    studentService.insert(student);
+
+                    break;
+
+                case "2":
+
+                    System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+
+                    break;
+
+                case "3":
+
+                    break;
+
+                case "4":
+
+                    break;
+
+                case "5":
+
+                    break;
+
+                case "6":
+
+                    break;
+
+                case "7":
+
+                    break;
+
+                case "8":
+
+                    break;
+            }
+
+        } while (!userChoice.equals("8"));
+
+        scanner.close();
     }
 }

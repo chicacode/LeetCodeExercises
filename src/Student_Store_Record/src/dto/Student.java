@@ -7,7 +7,12 @@ public class Student {
     private String StudentId;
     private int StudentRollNumber;
 
-    public Student() {
+    public Student(int Id, String Name, String Email, String StudentId, int StudentRollNumber) {
+        this.Id = Id;
+        this.Name = Name;
+        this.Email = Email;
+        this.StudentId = StudentId;
+        this.StudentRollNumber = StudentRollNumber;
     }
 
     public Student(String Name, String Email, String StudentId, int StudentRollNumber) {
@@ -17,12 +22,8 @@ public class Student {
         this.StudentRollNumber = StudentRollNumber;
     }
 
-    public Student(int Id, String Name, String Email, String StudentId, int StudentRollNumber) {
-        this.Id = Id;
-        this.Name = Name;
-        this.Email = Email;
-        this.StudentId = StudentId;
-        this.StudentRollNumber = StudentRollNumber;
+    public Student() {
+
     }
 
     public int getId() {
