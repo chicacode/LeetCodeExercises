@@ -34,12 +34,13 @@ public class App {
                 case "1":
                     System.out.println("- Enter your name -");
                     String name = scanner.nextLine();
-                    System.out.println("- Enter your studentId -");
-                    String studentId = scanner.nextLine();
+
                     System.out.println("- Enter your email -");
                     String email = scanner.nextLine();
+                    System.out.println("- Enter your studentId -");
+                    String studentId = scanner.nextLine();
                     System.out.println("- Enter your roll number -");
-                    int studentRollNumber = scanner.nextInt();
+                    int studentRollNumber = Integer.parseInt(scanner.nextLine());
 
                     Student student = new Student(name, email, studentId, studentRollNumber);
                     studentService.insert(student);
@@ -91,11 +92,13 @@ public class App {
 
                 case "4":
 
-                    break;
+                    System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+                    displayStudent(studentService.getAll());
+                    System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
-                case "5":
-
                     break;
+                default:
+                    System.out.println("Invalid choice");
 
             }
 

@@ -63,17 +63,17 @@ var twoSum = function (nums, target) {
 
 function validAnagram(s, t) {
 
-    if(s.length !== t.length){
+    if (s.length !== t.length) {
         return false;
     }
-    if([...s].sort().join('') === [...t].sort().join('')){
+    if ([...s].sort().join('') === [...t].sort().join('')) {
         console.log('true')
         return true;
-    }else{
+    } else {
         console.log('false')
         return false;
     }
- 
+
 
 }
 
@@ -87,7 +87,7 @@ validAnagram("rat", "car");
 function isAnagram(s, t) {
 
     // return false inmediately when the lengths of strings are not equal
-    if(s.length !== t.length){
+    if (s.length !== t.length) {
         return false;
     }
     // create an empty object
@@ -102,22 +102,22 @@ function isAnagram(s, t) {
         console.log(characters)
     }
 
-    for(const char of t){
-        console.log('second loop; ',char, t)
-        if(!characters[char]) return false;
-        
-        characters[char] --;
-        
+    for (const char of t) {
+        console.log('second loop; ', char, t)
+        if (!characters[char]) return false;
+
+        characters[char]--;
+
     }
 
     return true;
 
 }
 
-// isAnagram("anagram", "nagaram")
-// isAnagram("rat", "car")
-// isAnagram("aacc", "ccac")
-// isAnagram("ab", "a")
+                        // isAnagram("anagram", "nagaram")
+    // isAnagram("rat", "car")
+    // isAnagram("aacc", "ccac")
+    // isAnagram("ab", "a")
 
 
 

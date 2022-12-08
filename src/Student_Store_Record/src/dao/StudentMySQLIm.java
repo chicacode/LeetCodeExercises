@@ -15,7 +15,7 @@ public class StudentMySQLIm implements StudentDAO {
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
-    private static final String INSERT = "INSERT INTO student_table (Name, Email, StudentId, StudentRollNumber) VALUES (?,?,?,?)";
+    private static final String INSERT = "INSERT INTO student_table (Name, Email, StudentId, StudentRollNumber) VALUES (?, ?, ?, ?)";
     private static final String UPDATE = "UPDATE student_table SET Name = ?, Email = ?, StudentId = ?, StudentRollNumber = ?";
     private static final String DELETE = "DELETE FROM student_table WHERE Id = ?";
     private static final String GET_BY_ID = "SELECT * FROM student_table WHERE Id = ?";
@@ -24,7 +24,9 @@ public class StudentMySQLIm implements StudentDAO {
 
     public StudentMySQLIm() {
         try {
-            connection = DriverManager.getConnection(StudentDAO.URL, StudentDAO.USER, StudentDAO.PASSWORD);
+            connection = DriverManager.getConnection(StudentDAO.URL, StudentDAO.USER,
+                    StudentDAO.PASSWORD);
+            System.out.println("Connected to Database.");
         } catch (SQLException e) {
             System.out.println("Unable to connect! ");
             e.printStackTrace();
@@ -33,10 +35,15 @@ public class StudentMySQLIm implements StudentDAO {
 
     @Override
     public void insert(Student student) {
+        System.out.println("Insert Method!! .");
+
         int rowAffected = 0;
+        System.out.println("Int roew is" + rowAffected);
         try {
 
+            System.out.println("Before prepared Statement .");
             preparedStatement = connection.prepareStatement(INSERT);
+            System.out.println("After prepared Statement .");
             preparedStatement.setString(1, student.getName());
             preparedStatement.setString(2, student.getEmail());
             preparedStatement.setString(3, student.getStudentId());
@@ -51,6 +58,7 @@ public class StudentMySQLIm implements StudentDAO {
         } finally {
             try {
                 preparedStatement.close();
+
             } catch (SQLException e) {
                 System.out.println("Unable to close the statement! ");
                 e.printStackTrace();
