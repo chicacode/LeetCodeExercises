@@ -4,12 +4,116 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Spotify app">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Spotify, Flexbox">
+    <meta name="author" content="Geri">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spoty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Spotify App</title>
 </head>
 
 <body>
-    <h1>Spotify</h1>
+    <header class="header">
+
+        <div class="page-flows">
+
+            <span class="flow">
+                <i class="ion-chevron-left"></i>
+            </span>
+
+            <span class="flow">
+                <i class="ion-chevron-right disabled"></i>
+            </span>
+
+        </div>
+        <div class="search">
+
+            <input type="text" placeholder="Search" />
+
+        </div>
+
+        <div class="user">
+
+            <div class="user__notifications">
+
+                <i class="ion-android-notifications"></i>
+
+            </div>
+
+            <div class="user__inbox">
+
+                <i class="ion-archive"></i>
+
+            </div>
+
+            <div class="user__info">
+
+                <span class="user__info__img">
+
+                    <img src="https://i.scdn.co/image/ab67757000003b8283d6714c366d78dea378bf93" alt="Profile Picture"
+                        class="img-responsive" />
+
+                </span>
+
+                <span class="user__info__name">
+
+                    <span class="first">Geri</span>
+
+                    <span class="last">Hernan Al</span>
+
+                </span>
+
+            </div>
+
+            <div class="user__actions">
+
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                        <i class="ion-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Private Session</a></li>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Log Out</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <nav>
+            <ul>
+                <li><a href="http://" class="capitalize">home</a></li>
+                <li><a href="http://" class="capitalize">search</a></li>
+                <li><a href="http://" class="capitalize">your library</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <div class="container-main">
+
+        <section class="main-section">
+            <h2>Title</h2>
+        </section>
+        <section class="main-section__episodes">
+            <h2>Episodes for you</h2>
+        </section>
+        <aside>
+            <div class="sidebar">
+                <span>
+                    Your top songs
+                </span>
+            </div>
+        </aside>
+
+
+    </div>
+
 
 </body>
 
