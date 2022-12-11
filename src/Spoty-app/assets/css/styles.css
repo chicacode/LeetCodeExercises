@@ -176,11 +176,18 @@ img {
 
 .list-menu:hover {
   background: rgb(200, 200, 200);
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 8px;
   transition: all 0.2s ease;
 }
 
 .list-menu a {
   color: rgb(200, 200, 200);
+  transition: all 0.2s ease;
+}
+
+.list-menu a:hover {
+  color: rgb(0, 0, 0);
   transition: all 0.2s ease;
 }
 
@@ -214,5 +221,72 @@ img {
 
   .main-content {
     width: 100%;
+  }
+}
+
+.navigation {
+  padding: 15px;
+  background-color: rgb(40, 40, 40);
+  color: rgb(170, 170, 170);
+  overflow-y: scroll;
+}
+
+.navigation__list {
+  display: flex;
+  flex-flow: column wrap;
+  margin-bottom: 15px;
+}
+
+.navigation__list__item {
+  color: rgb(170, 170, 170);
+  padding: 5px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navigation__list__item:hover {
+  color: rgb(250, 250, 250);
+
+  text-decoration: none;
+  border-radius: 3px solid rgb(170, 170, 170);
+}
+
+.navigation__list__item i {
+  width: 25px;
+  display: block;
+}
+
+span {
+  padding-left: 5px;
+}
+
+@media (max-width: 786px) {
+  .navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  .navigation__list {
+    margin-bottom: 0;
+    width: calc(100% / 3);
+    text-align: center;
+  }
+
+  .navigation__list__item {
+    width: 100%;
+    text-align: center;
+  }
+  .navigation__list__item:hover {
+    border: none;
+  }
+
+  i {
+    display: none;
+  }
+  span {
+    margin: 0 auto;
   }
 }
