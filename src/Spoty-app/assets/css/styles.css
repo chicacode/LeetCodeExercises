@@ -49,10 +49,14 @@ a {
   color: rgb(170, 170, 170);
 }
 
-a.capitalize {
+a.capitalize span.capitalize {
   text-transform: capitalize;
   text-decoration: none;
   color: #a7a7a7;
+}
+
+span.capitalize {
+  text-transform: capitalize;
 }
 
 a:hover {
@@ -94,11 +98,11 @@ input {
   background-color: #fff;
   padding-left: 30px;
   padding: 15px;
-  width: 200px;
+  width: 400px;
   outline: none;
   background-image: url(https://i.scdn.co/image/ab67757000003b8283d6714c366d78dea378bf93);
   background-repeat: no-repeat;
-  background-size: 10%;
+  background-size: 7%;
   background-position: 5px;
 }
 
@@ -289,4 +293,45 @@ span {
   span {
     margin: 0 auto;
   }
+}
+.playing {
+  background-color: rgb(40, 40, 40);
+  border-bottom: 1px solid rgb(0, 0, 0);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.playing__art img {
+  width: 50px;
+  height: 50px;
+}
+
+.playing__song {
+  color: rgb(170, 170, 170);
+  padding-left: 15px;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.playing__song > a {
+  color: rgb(170, 170, 170);
+}
+
+.playing__song > a:hover {
+  color: rgb(250, 250, 250);
+  cursor: pointer;
+}
+
+.playing__song__name,
+.playing__song__artist {
+  text-decoration: none;
+}
+
+.playing__add {
+  padding-left: 10px;
+}
+
+.playing__add > .fas {
+  color: rgb(141, 201, 51);
 }
