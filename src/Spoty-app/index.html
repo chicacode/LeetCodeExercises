@@ -33,8 +33,7 @@
 
         </div>
         <div class="search">
-            <input type="text" placeholder="Search" />
-
+            <input type="text" placeholder="Search" class="search-input" />
         </div>
 
         <div class="user">
@@ -78,10 +77,10 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Private Session</a></li>
-                        <li><a href="#">Account</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a href="#">Log Out</a></li>
+                        <li class="list-menu"><a href="#" class="dropdown-menu-link">Private Session</a></li>
+                        <li class="list-menu"><a href="#" class="dropdown-menu-link">Account</a></li>
+                        <li class="list-menu"><a href="#" class="dropdown-menu-link">Settings</a></li>
+                        <li class="list-menu"><a href="#" class="dropdown-menu-link">Log Out</a></li>
                     </ul>
                 </div>
 
@@ -98,20 +97,128 @@
         </nav> -->
     </header>
     <div class="container-main">
+        <section class="content">
 
-        <section class="main-section">
-            <h2>Title</h2>
-        </section>
-        <section class="main-section__episodes">
-            <h2>Episodes for you</h2>
-        </section>
-        <aside>
-            <div class="sidebar">
-                <span>
-                    Your top songs
-                </span>
+
+            <div class="content-sidebar">
+                <section class="navigation">
+
+                    <div class="navigation__list">
+                        <aside>
+                            <div class="sidebar">
+
+                                <div class="navigation__list-header" role="button" data-toggle="collapse" href="#main"
+                                    aria-expanded="true" aria-controls="main">
+                                    main
+                                </div>
+
+                                <div class="collapse">
+                                    <a href="#" class="navigation__list__item">
+
+                                        <i class="fas fa-browser"></i>
+                                        <span>
+                                            Browser
+                                        </span>
+                                    </a>
+                                </div>
+
+
+
+                                <a href="#" class="navigation__list__item">
+                                    <i class="fas fa-person"></i>
+                                    <span>
+                                        Activity
+                                    </span>
+                                </a>
+
+                                <a href="#" class="navigation__list__item">
+
+                                    <i class="fas fa-signal-stream"></i>
+                                    <span>
+                                        Radio
+                                    </span>
+                                </a>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <div class="navigation__list">
+
+                        <div class="navigation__list-header" role="button" data-toggle="collapse" href="#yourmusic"
+                            aria-expanded="true" aria-controls="yourmusic">
+                            Your Music
+                        </div>
+                        <div class="collapse in" id="yourmusic">
+                            <a href="#" class="navigation__list__item">
+                                <i class="fas fa-headphones"></i>
+                                <span>
+                                    Your top songs
+                                </span>
+                            </a>
+                            <a href="#" class="navigation__list__item">
+                                <i class="fas fa-music"></i>
+                                <span>
+                                    albums
+                                </span>
+                            </a>
+                            <a href="#" class="navigation__list__item">
+                                <i class="fas fa-user-music"></i>
+                                <span>
+                                    artists
+                                </span>
+                            </a>
+                            <a href="#" class="navigation__list__item">
+                                <i class="fas fa-files"></i>
+                                <span>
+                                    local files
+                                </span>
+                            </a>
+                        </div>
+
+                    </div>
+                </section>
             </div>
-        </aside>
+
+            <div class="main-content">
+                <section class="main-section__episodes">
+                    <h2>Episodes for you</h2>
+                </section>
+                <section class="main-section">
+                    <h2>Title</h2>
+                </section>
+
+                <section class="playlist">
+                    <a href="#">
+                        <i class="fas fa-plus-outline"></i>
+                        New playlist
+                    </a>
+
+                </section>
+
+                <section class="playing">
+                    <div class="playing__art">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/cputh.jpg" alt="Album Art" />
+                    </div>
+
+                    <div class="playing__song">
+                        <a href="#" class="playing__song__name">Hear me now</a>
+                        <a href="#" class="playing__song__artist">Alok</a>
+                    </div>
+
+                    <div class="playing__add">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </section>
+            </div>
+
+
+
+
+
+        </section>
+
+
+
 
 
     </div>
