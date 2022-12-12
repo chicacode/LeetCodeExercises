@@ -355,3 +355,13 @@ span {
 .main__episodes-img {
   width: 14rem;
 }
+
+.main-section__title {
+  color: #fff;
+  padding: 10px 0 10px 10px;
+}
+
+.main-section__episodes,
+.main-section__music {
+  padding: 10px 0 10px 10px;
+}
