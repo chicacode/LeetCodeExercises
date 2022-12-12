@@ -130,7 +130,7 @@ input {
   cursor: pointer;
 }
 
-img {
+.img {
   max-width: 30px;
   max-height: 30px;
   border-radius: 50%;
@@ -233,6 +233,7 @@ img {
   background-color: rgb(40, 40, 40);
   color: rgb(170, 170, 170);
   overflow-y: scroll;
+  height: 99vh;
 }
 
 .navigation__list {
@@ -334,4 +335,23 @@ span {
 
 .playing__add > .fas {
   color: rgb(141, 201, 51);
+}
+
+/* .main-section__episodes {
+  display: flex;
+} */
+
+.episodes__podcast-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__episodes {
+  margin: 10px;
+}
+
+.main__episodes-img {
+  width: 14rem;
 }
