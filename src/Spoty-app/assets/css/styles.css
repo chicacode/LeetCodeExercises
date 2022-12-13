@@ -69,12 +69,13 @@ i {
   background: rgb(40, 40, 40);
   padding: 10px;
   color: rgb(170, 170, 170);
-  border-bottom: 1 px solid #000;
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-items: start;
 }
-
+.sidebar {
+  padding: 15px;
+}
 .page-header-flow .flow {
   font-size: 20px;
   color: rgb(170, 170, 170);
