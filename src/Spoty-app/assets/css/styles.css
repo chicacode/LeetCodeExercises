@@ -69,13 +69,12 @@ i {
   background: rgb(40, 40, 40);
   padding: 10px;
   color: rgb(170, 170, 170);
+  border-bottom: 1 px solid #000;
   display: flex;
   flex-flow: row wrap;
-  align-items: start;
+  align-items: center;
 }
-.sidebar {
-  padding: 15px;
-}
+
 .page-header-flow .flow {
   font-size: 20px;
   color: rgb(170, 170, 170);
@@ -101,7 +100,7 @@ input {
   padding: 15px;
   width: 400px;
   outline: none;
-  background-image: url(https://img.icons8.com/search);
+  background-image: url(https://i.scdn.co/image/ab67757000003b8283d6714c366d78dea378bf93);
   background-repeat: no-repeat;
   background-size: 7%;
   background-position: 5px;
@@ -139,12 +138,14 @@ input {
   margin: 10px 5px 0 0;
 }
 
-.dropdown-toggle {
-  background: none;
-  border: none;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.dropdown-menu {
+.dropdown-content {
+  display: none;
+  position: absolute;
   background-color: rgb(40, 40, 40);
   margin-top: 25px;
   border-radius: 2px;
@@ -152,13 +153,28 @@ input {
   border: none;
 }
 
-.dropdown-menu::before {
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* .dropdown-menu::before {
   position: absolute;
   top: -30px;
   right: 7px;
   color: rgb(40, 40, 40);
   font-size: 36px;
+} */
+
+/* .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
 }
+
+*/
 
 .dropdown-menu-link {
   color: rgb(170, 170, 170);

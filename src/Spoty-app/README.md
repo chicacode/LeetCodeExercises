@@ -14,12 +14,16 @@ Spotify app created with HTML5 and CSS3 Flexbox and Grid
 
 ### Technologies used
 
-1. HTMl
+1. HTML
 2. CSS
 3. Javascript
 4. Font Awesome
-5. Google fonts
+5. Google Fonts
 
 ## Author:
 
 Geri
+
+### References:
+
+Images from Unsplash
